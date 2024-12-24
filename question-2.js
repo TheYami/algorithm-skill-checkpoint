@@ -1,5 +1,18 @@
 function findProductPrice(products, name) {
-  // Your code here
+  let min = 0;
+  let max = products.length - 1;
+  
+  while(min <= max){
+    const mid = Math.floor((max-min)/2)
+    if(products[mid].name === name){
+      return products[mid].price
+    }else if(products[mid].name < name){
+      min = mid + 1
+    }else{
+      max = mid - 1
+    }
+  }
+  return -1
 }
 
 // Test case
